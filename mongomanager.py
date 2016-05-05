@@ -1,6 +1,6 @@
 #/usr/bin/python
 from pymongo import MongoClient
-from bson.json_util import dumps
+
 
 client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjwf')
 #LOKAL: client = MongoClient()
@@ -28,6 +28,5 @@ def db_contains_track(track_json):
         return False
 
 def get_all_tracks():
-    BSON_from_db = collection.find()
-    return dumps(BSON_from_db)
+    return collection.find()
 

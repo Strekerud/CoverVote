@@ -1,5 +1,5 @@
 #/usr/bin/python
-
+from bson.json_util import dumps
 from spotifycommunicator import get_track
 from mongomanager import add_track_to_db, get_all_tracks
 
@@ -12,6 +12,6 @@ def push_to_db(track,artist=""):
     add_track_to_db(build_track_json(track,artist))
 
 def get_tracks_from_db():
-    return get_all_tracks()
+    return dumps(get_all_tracks())
 
 
