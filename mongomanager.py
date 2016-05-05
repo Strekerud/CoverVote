@@ -2,8 +2,8 @@
 from pymongo import MongoClient
 
 
-#client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjwf')
-client = MongoClient()
+client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjwf')
+#LOKAL: client = MongoClient()
 db = client.covervote
 collection = db.tracks
 
