@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from covervoteservice import push_to_db, get_tracks_from_db
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def submitsong():
 
 @app.route("/tracks")
 def get_all_tracks():
-    return get_tracks_from_db()
+    return flask.jsonify(**get_tracks_from_db())
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
