@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template,request
-
+from covervoteservice import push_to_db
 
 app = Flask(__name__)
 
@@ -17,9 +17,7 @@ def addsong():
 def submitsong():
 	artist = request.form['artist']
 	song = request.form['song']
-	url = request.form['URL']
-	album = request.form['album']
-	return request.form['artist']
+	push_to_db(song,artist)        
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

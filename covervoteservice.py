@@ -11,4 +11,3 @@ def push_to_db(track,artist=""):
     add_track_to_db(build_track_json(track,artist))
 
 
-push_to_db("africa")
