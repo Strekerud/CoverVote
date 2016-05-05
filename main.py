@@ -16,6 +16,7 @@ def submitsong():
 	artist = request.form['artist']
 	song = request.form['song']
 	url = request.form['URL']
+	album = request.form['album']
 	return request.form['artist']
 
 if __name__ == "__main__":
