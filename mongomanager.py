@@ -6,7 +6,6 @@ client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/he
 db = client.heroku_w60qmjw
 collection = db.tracks
 
-
 def add_track_to_db(track_json):
     collection.insert_one(track_json)
     
@@ -14,7 +13,6 @@ def add_track_to_db(track_json):
   
 #def deduct_point(spotify_id):
   
-    
 def get_track_from_db(track_json):
     if db_contains_track(track_json):
         return collection.find_one(track_json)

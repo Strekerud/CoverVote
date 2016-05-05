@@ -22,10 +22,7 @@ def submitsong():
 
 @app.route("/tracks")
 def get_all_tracks():
-    return get_tracks_from_db
-
-
-
+    return get_tracks_from_db()
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
