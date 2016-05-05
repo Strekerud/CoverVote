@@ -13,6 +13,9 @@ def addsong():
 
 @app.route("/submitsong", methods=["POST"])
 def submitsong():
+	artist = request.form['artist']
+	song = request.form['song']
+	url = request.form['URL']
 	return request.form['artist']
 
 if __name__ == "__main__":
