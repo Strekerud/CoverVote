@@ -27,4 +27,3 @@ def get_album_picture(spotify_search_result):
     return spotify_search_result["album"]["images"][2]["url"]
 
 
-print gettrack("the count of tuscany","Dream Theater")
