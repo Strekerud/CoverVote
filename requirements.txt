@@ -3,4 +3,4 @@ Jinja2==2.7.3
 Werkzeug==0.10.4
 gunicorn==19.3.0
 PyMongo==3.2.2
-requests=2.4.1
+requests==2.4.1
