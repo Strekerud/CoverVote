@@ -1,4 +1,5 @@
 #/usr/bin/python
+
 from spotifycommunicator import get_track
 from mongomanager import add_track_to_db, get_all_tracks
 
@@ -12,3 +13,5 @@ def push_to_db(track,artist=""):
 
 def get_tracks_from_db():
     return get_all_tracks()
+
+
