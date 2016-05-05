@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -10,6 +10,10 @@ def hello():
 @app.route("/addsong")
 def addsong():
 	return render_template("SuggestSong.html")
+
+@app.route("/submitsong", methods=["POST"])
+def submitsong():
+	return request.form['artist']
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
