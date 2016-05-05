@@ -1,6 +1,6 @@
 #/usr/bin/python
 from spotifycommunicator import get_track
-from mongomanager import add_track_to_db
+from mongomanager import add_track_to_db, get_all_tracks
 
 def build_track_json(track,artist=""):
     track_json = get_track(track,artist)
@@ -10,4 +10,5 @@ def build_track_json(track,artist=""):
 def push_to_db(track,artist=""):
     add_track_to_db(build_track_json(track,artist))
 
-
+def get_tracks_from_db():
+    return get_all_tracks()

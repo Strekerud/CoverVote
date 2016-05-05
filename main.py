@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template,request
-from covervoteservice import push_to_db
+from covervoteservice import push_to_db, get_tracks_from_db
 
 app = Flask(__name__)
 
@@ -20,6 +20,13 @@ def submitsong():
 	push_to_db(song,artist)
         return render_template("index.html")
 
+@app.route("/tracks")
+def get_all_tracks():
+    return get_tracks_from_db
+
+
+
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)

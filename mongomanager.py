@@ -11,10 +11,7 @@ def add_track_to_db(track_json):
     collection.insert_one(track_json)
     
 #def add_point(spotify_id):
-#   track = collection.find_one({"spotify_id": spotify_id})
-#  collection.update_one({"spotify_id": spotify_id,
-#                           {"$inc": { "rating": 1}})
-        
+  
 #def deduct_point(spotify_id):
   
     
@@ -30,3 +27,6 @@ def db_contains_track(track_json):
         return True
     else:
         return False
+
+def get_all_tracks():
+    return collection.find()
