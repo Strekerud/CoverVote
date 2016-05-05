@@ -1,11 +1,11 @@
 <!doctype html>
 <title>Add song</title>
-<form action="{{ url_for('addsong') }}" method="Post"> 
+<form action="{{ url_for('submitsong') }}" method="Post"> 
 	<label for="artist">Artist:</label><br>
-	<input type="text" name="Artist"><br>
+	<input type="text" name="artist"><br>
 	<label for="song">Song:</label><br>
-	<input type="text" name="Song"><br>
+	<input type="text" name="song"><br>
 	<label for="url">Link to song?</label><br>
-	<input type="text" name="Link to song"><br><br>
+	<input type="text" name="URL"><br><br>
 	<input type="submit" value="Submit">
 </form>
