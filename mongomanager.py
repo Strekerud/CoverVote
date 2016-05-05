@@ -1,7 +1,7 @@
 #/usr/bin/python
 from pymongo import MongoClient
 
-client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjwf')
+client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjw')
 #LOKAL: client = MongoClient()
 db = client.heroku_w60qmjw
 collection = db.tracks

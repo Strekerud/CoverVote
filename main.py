@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
 from covervoteservice import push_to_db, get_tracks_from_db
 
 app = Flask(__name__)
