@@ -1,6 +1,7 @@
 import os
-from flask import Flask, render_template
-from mongomanager import init_pymongo
+
+from flask import Flask, render_template,request
+
 
 app = Flask(__name__)
 
@@ -12,8 +13,15 @@ def hello():
 def addsong():
 	return render_template("SuggestSong.html")
 
+@app.route("/submitsong", methods=["POST"])
+def submitsong():
+	artist = request.form['artist']
+	song = request.form['song']
+	url = request.form['URL']
+	album = request.form['album']
+	return request.form['artist']
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    init_pymongo(app)
     app.run(debug=True, host='0.0.0.0', port=port)
     
