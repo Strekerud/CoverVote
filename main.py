@@ -17,7 +17,8 @@ def addsong():
 def submitsong():
 	artist = request.form['artist']
 	song = request.form['song']
-	push_to_db(song,artist)        
+	push_to_db(song,artist)
+        return render_template("index.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
