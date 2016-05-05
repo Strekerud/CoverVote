@@ -1,7 +1,7 @@
 #/usr/bin/python
 import requests
 
-def gettrack(trackname,artist):
+def gettrack(trackname,artist=""):
     query = "https://api.spotify.com/v1/search?q="
     if not artist :
         query=query+"\""+trackname+"\"&type=track"
