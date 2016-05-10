@@ -3,5 +3,19 @@
  <body>
    <h1>CoverVote</h1>
    <p><a href="{{ url_for('addsong') }}"><button>Add song</button></a></p>
+   <table class="table" style="padding-left:5px;">
+     <th>Trackname</th>
+     <th>Artist</th>
+     <th>Album</th>
+     <th>Album art</th>
+     {% for track in tracks %}
+     <tr>
+       <th>{{ track["trackname"] }}</th>
+       <td>{{ track["artist"] }} </td>
+       <td>{{ track["album"] }} </td>
+       <td><img src="{{ track["picture"] }}" </td>
+     </tr>
+     {% endfor %}
+   </table>
 </body>
 </html>

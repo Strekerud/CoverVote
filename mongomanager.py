@@ -1,9 +1,8 @@
 #/usr/bin/python
 from pymongo import MongoClient
 
-
 client = MongoClient('mongodb://covervote:covervote12@ds013202.mlab.com:13202/heroku_w60qmjwf')
-#LOKAL: client = MongoClient()
+#client = MongoClient()
 db = client.heroku_w60qmjwf
 collection = db.tracks
 
@@ -29,4 +28,3 @@ def db_contains_track(track_json):
 
 def get_all_tracks():
     return collection.find()
-

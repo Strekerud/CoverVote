@@ -14,4 +14,3 @@ def push_to_db(track,artist=""):
 def get_tracks_from_db():
     return dumps(get_all_tracks())
 
-
