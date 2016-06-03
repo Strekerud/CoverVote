@@ -7,7 +7,6 @@ def build_track_json(track,artist=""):
     track_json = search_tracks(track,artist)
     for tracks in track_json:
        tracks["rating"] = 1
-    print track_json
     return track_json
 
 def push_to_db(track,artist=""):
