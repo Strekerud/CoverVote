@@ -1,12 +1,11 @@
 import os
 
 from flask import Flask, render_template, request, jsonify
-from flask.ext.socketio import SocketIO, emit
 from covervoteservice import push_to_db, get_tracks_from_db
 from bson.json_util import loads
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+
 search_result =[]
 
 @app.route("/")
@@ -32,4 +31,5 @@ def get_all_tracks():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
+
     
