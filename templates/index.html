@@ -22,14 +22,6 @@
        <input type="text" name="song"><br>
        <input type="submit" value="Submit">
      </form>
-     <script type="text/javascript">
-       $(document).ready(function(){
-       var socket = io.connect('http://' + document.domain + ':' + location.port ' '/suggestsong');
-       socket.on('show',function(msg) {
-       $('#log').append('recieved'):
-       });
-       });    
-     </script>
    </div>
     <table class="table" style="padding-left:5px;">
      <th>Trackname</th>
@@ -66,8 +58,8 @@
 	     {% endfor %}
 	   </table>
 	 </div>
-	 <div class="modal-footer">
-	 
+	 <div class="modal-footer">	
+ 
 	 </div>
        </div>
      </div>
