@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#Options").find('tr').click(function(){
-	console.log("row :"+($(this).index()));
+	window.location = $(this).index();
     });
     $(".submit_form").hide();
     $("#addsong").click(function(){
