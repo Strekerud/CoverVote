@@ -20,7 +20,7 @@ def get_track_from_db(track_json):
         return collection.find_one(track_json)
     else:
         #return track not found error or something
-        return null
+        return []
     
 def db_contains_track(track_json):
     if collection.find_one(track_json):

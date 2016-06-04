@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template, request, jsonify
-from covervoteservice import push_to_db, get_tracks_from_db
+from covervoteservice import push_to_db, get_tracks_from_db, get_search_result
 from bson.json_util import loads
 
 app = Flask(__name__)
@@ -12,16 +12,12 @@ search_result =[]
 def index():
     return render_template("index.html", tracks=loads(get_tracks_from_db()), search_result=search_result)
 
-@app.route("/addsong")
-def addsong():
-    return render_template("SuggestSong.html")
-
 @app.route("/submitsong", methods=["POST"])
 def submitsong():
     search_result = []
     artist = request.form['artist']
     song = request.form['song']
-    search_result = push_to_db(song,artist)
+    search_result = get_search_result(song,artist)
     return render_template("index.html", tracks=loads(get_tracks_from_db()),search_result=search_result)
         
 @app.route("/tracks")
