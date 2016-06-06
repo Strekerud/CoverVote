@@ -9,7 +9,6 @@ $(document).ready(function(){
 	$(".Options").hide();
 	$("#SuggestModal").modal();
 	$(".submit_form").show();
-	$("#addsong").hide();
     });
     if($(".Options").find("tr")[1]){
 	$(".Options").show();
