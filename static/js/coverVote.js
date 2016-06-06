@@ -3,8 +3,10 @@ $(document).ready(function(){
 	window.location = $(this).index();
     });
     if(!($("#SuggestModal").hasClass('in'))){
-	if($(".Options").find("tr")[1]){
-	    window.location = "/discard";
+	if($(".Options").is(":visible")){
+	    if($(".Options").find("tr")[1]){
+		window.location = "/discard";
+	    }
 	}
     }
     $("#addsong").click(function(){
@@ -13,8 +15,8 @@ $(document).ready(function(){
 	$(".submit_form").show();
     });
     if($(".Options").find("tr")[1]){
-	$(".Options").show();
 	$("#SuggestModal").modal();
+	$(".Options").show();
     }
     
 });    
