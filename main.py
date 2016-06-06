@@ -11,6 +11,7 @@ search_result = []
 
 @app.route("/")
 def index():
+    search_result=[]
     return render_template("index.html", tracks=loads(get_tracks_from_db()), search_result=search_result)
 
 @app.route("/submitsong", methods=["POST"])
@@ -19,10 +20,13 @@ def submitsong():
     search_result = []
     artist = request.form['artist']
     song = request.form['song']
-    search_result = get_search_result(song,artist)
-    time.sleep(5)
-    return redirect("/")
-        
+    if song != "":
+        search_result = get_search_result(song,artist)
+        time.sleep(5)
+        return render_template("index.html", tracks=loads(get_tracks_from_db()), search_result=search_result)
+    else:
+        return redirect("/")
+            
 @app.route("/tracks")
 def get_all_tracks():
     return get_tracks_from_db()
@@ -45,12 +49,6 @@ def add_song_2():
 def add_song_3():
     global search_result
     push_to_db(search_result[2])
-    search_result=[]
-    return redirect("/")
-
-@app.route("/discard")
-def discard_search():
-    global search_result
     search_result=[]
     return redirect("/")
 
