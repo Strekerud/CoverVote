@@ -3,11 +3,13 @@ $(document).ready(function(){
 	window.location = $(this).index();
     });
     if(!($("#SuggestModal").hasClass('in'))){
-	window.location = "/discard";
+	if($(".Options").find("tr")[1]){
+	    window.location = "/discard";
+	}
     }
     $("#addsong").click(function(){
-	$(".Options").hide();
 	$("#SuggestModal").modal();
+	$(".Options").hide();
 	$(".submit_form").show();
     });
     if($(".Options").find("tr")[1]){
