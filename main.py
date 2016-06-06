@@ -20,7 +20,7 @@ def submitsong():
     artist = request.form['artist']
     song = request.form['song']
     search_result = get_search_result(song,artist)
-    time.sleep(2)
+    time.sleep(5)
     return redirect("/")
         
 @app.route("/tracks")
