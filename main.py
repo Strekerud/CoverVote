@@ -31,22 +31,22 @@ def submitsong():
 def get_all_tracks():
     return get_tracks_from_db()
 
-@app.route("/1")
-def add_song_1():
+@app.route("/0")
+def add_song_0():
     global search_result
     push_to_db(search_result[0])
     search_result=[]
     return redirect("/")
     
-@app.route("/2")
-def add_song_2():
+@app.route("/1")
+def add_song_1():
     global search_result
     push_to_db(search_result[1])
     search_result=[]
     return redirect("/")
                       
-@app.route("/3")
-def add_song_3():
+@app.route("/2")
+def add_song_2():
     global search_result
     push_to_db(search_result[2])
     search_result=[]
