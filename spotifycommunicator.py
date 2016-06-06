@@ -12,9 +12,9 @@ def search_tracks(trackname,artist=""):
     top_three_search_results = []
     top_three_search_results.append(choose_search_result(spotify_search_result_list[0]))
     if len(spotify_search_result_list)>1:
-        top_three_search_results.append(choose_search_result(spotify_search_result_list[2]))
+        top_three_search_results.append(choose_search_result(spotify_search_result_list[1]))
         if len(spotify_search_result_list)>2:
-               top_three_search_results.append(choose_search_result(spotify_search_result_list[1]))
+               top_three_search_results.append(choose_search_result(spotify_search_result_list[2]))
                
     return top_three_search_results
 
