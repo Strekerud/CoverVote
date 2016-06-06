@@ -4,7 +4,7 @@ $(document).ready(function(){
     });
     if(!($("#SuggestModal").hasClass('in'))){
 	window.location = "/discard";
-    });
+    }
     $("#addsong").click(function(){
 	$(".Options").hide();
 	$("#SuggestModal").modal();
