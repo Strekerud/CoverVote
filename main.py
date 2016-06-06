@@ -1,5 +1,6 @@
 import os
 
+import time
 from flask import Flask, render_template, request, jsonify, redirect
 from covervoteservice import push_to_db, get_tracks_from_db, get_search_result
 from bson.json_util import loads
@@ -19,6 +20,7 @@ def submitsong():
     artist = request.form['artist']
     song = request.form['song']
     search_result = get_search_result(song,artist)
+    time.sleep(2)
     return redirect("/")
         
 @app.route("/tracks")
@@ -29,21 +31,21 @@ def get_all_tracks():
 def add_song_1():
     global search_result
     push_to_db(search_result[0])
-    search_result = []
+    search_result=[]
     return redirect("/")
     
 @app.route("/2")
 def add_song_2():
     global search_result
     push_to_db(search_result[1])
-    search_result = []
+    search_result=[]
     return redirect("/")
                       
 @app.route("/3")
 def add_song_3():
     global search_result
     push_to_db(search_result[2])
-    search_result = []
+    search_result=[]
     return redirect("/")
 
 if __name__ == "__main__":
