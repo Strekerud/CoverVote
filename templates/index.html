@@ -51,13 +51,15 @@
 		 <th>Trackname</th>
 		 <th>Artist</th>
 		 <th>Album</th>
+		 <tbody>
 		 {% for song in search_result %}
 		 <tr>
-		   <th>{{ song["trackname"] }}</th>
+		   <td>{{ song["trackname"] }}</td>
 		   <td>{{ song["artist"] }} </td>
 		   <td>{{ song["album"] }} </td>
 		 </tr>
 		 {% endfor %}
+		 </tbody>
 	       </table>
 	     </div>
 	 </div>

@@ -4,7 +4,8 @@ $(document).ready(function(){
     });
     if(!($("#SuggestModal").hasClass('in'))){
 	if($(".Options").is(":visible")){
-	    if($(".Options").find("tr")[1]){
+	    if($(".Options").find('tr')[1]){
+		$(".Options tbody").remove();
 		window.location = "/discard";
 	    }
 	}
