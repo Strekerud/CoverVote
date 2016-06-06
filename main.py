@@ -14,6 +14,11 @@ def index():
     search_result=[]
     return render_template("index.html", tracks=loads(get_tracks_from_db()), search_result=search_result)
 
+@app.route("/submitsong")
+def refresh_submitsong():
+    return redirect("/")
+
+
 @app.route("/submitsong", methods=["POST"])
 def submitsong():
     global search_result
