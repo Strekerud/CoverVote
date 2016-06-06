@@ -48,6 +48,12 @@ def add_song_3():
     search_result=[]
     return redirect("/")
 
+@app.route("/discard")
+def discard_search():
+    global search_result
+    search_result=[]
+    return redirect("/")
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
